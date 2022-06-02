@@ -1,0 +1,4 @@
+Pour créer une nouvelle page:
+    - models.py
+    - urls.py
+    - views.py
