@@ -5,8 +5,16 @@
 - (djangoenv) etudiant@deb11:~/SAE23/django/computermngt$ python3 manage.py runserver
 
 
-Pour créer une nouvelle page:
+Pour créer une nouvelle page :
 
     - models.py
     - urls.py
     - views.py
+
+Pour mettre a jour le github : 
+
+- etudiant@deb11:~$ cd SAE23/
+- etudiant@deb11:~/SAE23$ git add *
+- etudiant@deb11:~/SAE23$ git commit -m "Premier dépot 2"
+- etudiant@deb11:~/SAE23$ git pull
+- etudiant@deb11:~/SAE23$ git push
