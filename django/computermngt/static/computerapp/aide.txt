@@ -1,4 +1,12 @@
+﻿Pour activer l’environnement :
+
+- etudiant@deb11:~$ source virtualenvs/djangoenv/bin/activate
+- (djangoenv) etudiant@deb11:~$ cd SAE23/django/computermngt/
+- (djangoenv) etudiant@deb11:~/SAE23/django/computermngt$ python3 manage.py runserver
+
+
 Pour créer une nouvelle page:
+
     - models.py
     - urls.py
     - views.py
