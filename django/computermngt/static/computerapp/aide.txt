@@ -18,3 +18,7 @@ Pour mettre a jour le github :
 - etudiant@deb11:~/SAE23$ git commit -m "Premier dépot 2"
 - etudiant@deb11:~/SAE23$ git pull
 - etudiant@deb11:~/SAE23$ git push
+
+
+
+<!--{% extends "index.html" %}-->

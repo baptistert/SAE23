@@ -58,7 +58,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             'computerApp/',
-            'templates/'
+            'template/',
         ],
         'APP_DIRS': True,
         'OPTIONS': {

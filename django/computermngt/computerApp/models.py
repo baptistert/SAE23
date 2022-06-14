@@ -1,5 +1,4 @@
-from curses import delay_output
-from ssl import DefaultVerifyPaths
+from http.client import LENGTH_REQUIRED
 from django.db import models
 
 
@@ -13,7 +12,7 @@ class Compte(models.Model):
         ('USER', ('USER - Poste')),
     )
 
-    num_c = models.AutoField(primary_key=True, editable=False)
+    id = models.AutoField(primary_key=True, editable=False)
     username = models.CharField(max_length=12)
     password = models.CharField(max_length=24)
     nom = models.CharField(max_length=18)
@@ -25,12 +24,13 @@ class Compte(models.Model):
 
 class Infrastructure(models.Model):
 
-    num_i = models.AutoField(primary_key=True, editable=False)
+    id = models.AutoField(primary_key=True, editable=False)
     nom = models.CharField(max_length=12)
     nb_mach = models.CharField(max_length=12)
     nb_equi = models.CharField(max_length=24)
     respon = models.CharField(max_length=18)
     entretien = models.DateField()
+    #compte = models.ForeignKey('Compte', on_delete=models.SET_NULL, null=True)
 
 
 
@@ -42,8 +42,11 @@ class Equipement(models.Model):
         ('FIREWALL', ('FIREWALL')),
     )
 
-    num_e = models.AutoField(primary_key=True, editable=False)
+    id = models.AutoField(primary_key=True, editable=False)
     type = models.CharField(max_length=12, choices=TYPE, default='SWITCH')
     infra = models.CharField(max_length=32)
+    ip = models.CharField(max_length=19)
     uti = models.CharField(max_length=12)
     last_maj = models.DateField()
+    #compte = models.ForeignKey('Compte', on_delete=models.SET_NULL, null=True)
+    #infrastructure = models.ForeignKey('Infrastructure', on_delete=models.SET_NULL, null=True)

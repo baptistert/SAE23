@@ -1,12 +1,14 @@
-from urllib.parse import urlparse
-from django.urls import path
+from django.urls import URLPattern, path
 
 from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('templates/computerapp/equipement_list.html', views.equipement_list_view, name='equipement'),
-    path('templates/computerapp/equipement_detail.html', views.equipement_detail_view, name='equipement-detail'),
-    path('templates/computerapp/infrastructure_list.html', views.infrastructure_list_view, name='infrastructure'),
-    path('templates/computerapp/infrastructure_detail.html', views.infrastructure_detail_view, name='infrasctructure-detail'),
+    path('equipements/', views.equipement_list_view, name='equipements'),
+    path('equipements/<pk>', views.equipement_detail_view, name='equipement-detail'),
+    path('infrastructures/', views.infrastructure_list_view, name='infrastructures'),
+    path('infrastructures/<pk>', views.infrastructure_detail_view, name='infrastructure-detail'),
+    path('add-equipement/', views.equipement_add_form, name='add-equipement'),
+    path('add-infrastructure/', views.infrastructure_add_form, name='add-infrastructure'),
+    path('add-compte/', views.compte_add_form, name='add-compte'),
 ]

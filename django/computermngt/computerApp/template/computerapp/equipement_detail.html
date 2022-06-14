@@ -1,0 +1,15 @@
+{% extends 'template/base.html' %}
+
+{% block menu %}
+<p class="h1" style="color: #0d6efd; font-family: 'Helvetica Neue', sans-serif; font-size: 28px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; padding-top: 18px;">Détail équipement</p>
+{% endblock %}
+{% block content %}
+<h1>Type : {{ equipement.type }}</h1>
+    
+    <p><strong>Id :</strong> {{ equipement.id }}</p>
+    <p><strong>IP : </strong> {{ equipement.ip }}</p>
+    <p><strong>Date de dernière MAJ : </strong> {{ equipement.last_maj }}</p>
+    <p><strong>Administrateur : </strong> {{ equipement.uti }}</p>
+    <p><strong>Infrastructure : </strong> {{ equipement.infra }}</p>
+    
+{% endblock %}
