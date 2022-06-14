@@ -5,8 +5,8 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('machines/', views.machine_list_view, name='machines'),
-    path('machine/<pk>', views.machine_detail_view, name='machine-detail'),
-    path('personnes/', views.personnes_list_view, name='personnes'),
-    path('personne/<pk>', views.personnes_detail_view, name='personne-detail'),
+    path('templates/computerapp/equipement_list.html', views.equipement_list_view, name='equipement'),
+    path('templates/computerapp/equipement_detail.html', views.equipement_detail_view, name='equipement-detail'),
+    path('templates/computerapp/infrastructure_list.html', views.infrastructure_list_view, name='infrastructure'),
+    path('templates/computerapp/infrastructure_detail.html', views.infrastructure_detail_view, name='infrasctructure-detail'),
 ]

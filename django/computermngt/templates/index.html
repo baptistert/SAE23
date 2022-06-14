@@ -90,13 +90,13 @@
                     <hr>
                     <ul class="nav nav-pills flex-column mb-auto">
                         <li class="nav-item">
-                        <a href="#" class="nav-link active" aria-current="page">
+                        <a href="{% url 'equipement' %}" class="nav-link active" aria-current="page">
                             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
                             Équipements
                         </a>
                         </li>
                         <li>
-                        <a href="#" class="nav-link link-dark">
+                        <a href="{% url 'infrastructure' %}" class="nav-link link-dark">
                             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
                             Infrastructures
                         </a>
@@ -104,45 +104,24 @@
                     <hr>
                     <div class="dropdown">
                     <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                        <strong>mdo</strong>
+                        <strong>Actions</strong>
                     </a>
                     <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                    <li><a class="dropdown-item" href="#">New project...</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="../admin/computerApp/compte/add/">Ajouter Compte</a></li>
+                    <li><a class="dropdown-item" href="../admin/computerApp/equipement/add/">Ajouter Equipement</a></li>
+                    <li><a class="dropdown-item" href="../admin/computerApp/infrastructure/add/">Ajouter Infrastructure</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    <li><a class="dropdown-item" href="../admin/">Panel Admin</a></li>
                     </ul>
                     </div>
                 
 
                     {% endblock %}
                 </div> 
-        
-
-                <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-
-                    {% block content %}
-
-                    <main>
-                        <h1 class="visually-hidden">Heroes examples</h1>
-                
-                        <div class="px-4 py-5 my-5 text-center">
-                        <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-                        <h1 class="display-5 fw-bold">Centered hero</h1>
-                            <div class="col-lg-6 mx-auto">
-                                <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-                                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
-                                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
-                                </div>
-                            </div>
-                        </div>
-                    </main>
-
-                    {% endblock %}
-                </div>
-
+                <center>
+                    <h1>IT MANAGEMENT</h1>
+                    <h1>GESTION DES EQUIPEMENTS ET DES INFRASTRUCTURES</h1>
+                </center>    
             </div>    
         </div>
     </body>

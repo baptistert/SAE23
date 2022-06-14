@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h1>Liste des equipements</h1>
+    {% if equipementList %}
+    <ul>
+        {% for equipement in equipementList %}
+            <li>
+                <a href= "{% url 'equipement-detail' equipement.num_e %}">
+                    {{ equipement.num_e }} </a> ({{equipement.type}}) ({{equipement.infra}})
+            </li>
+        {% endfor %} 
+    </ul>
+    {% else %}
+        <p>Il n'y a pas d'equipements.</p>
+    {% endif %}
+{% endblock %}

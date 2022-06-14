@@ -1,52 +1,49 @@
+from curses import delay_output
 from ssl import DefaultVerifyPaths
 from django.db import models
-from datetime import date, datetime
+
 
 # Create your models here.
 
-class Machine(models.Model):
+class Compte(models.Model):
 
     TYPE = (
-        ('PC', ('PC - Run windows')),
-        ('Mac', ('Mac - Run MacOS')),
-        ('Serveur', ('Serveur - Simple Server to deploy virtual machines')),
-        ('Switch', ('Switch - To maintains and connect servers')),
+        ('TECHNICIEN', ('TECHNICIEN')),
+        ('ADMIN', ('ADMIN')),
+        ('USER', ('USER - Poste')),
     )
 
-    id = models.AutoField(primary_key=True, editable=False)
-    nom = models.CharField(max_length=6)
-    maintenanceDate = models.DateField(default=datetime.now())
-    mach = models.CharField(max_length=32, choices=TYPE, default='PC')
+    num_c = models.AutoField(primary_key=True, editable=False)
+    username = models.CharField(max_length=12)
+    password = models.CharField(max_length=24)
+    nom = models.CharField(max_length=18)
+    prenom = models.CharField(max_length=18)
+    poste = models.CharField(max_length=12, choices=TYPE, default='TECHNICIEN')
+    addr_mail = models.EmailField()
 
-    def __str__ (self):
-        return str(self.id) + " -> " + self.nom
-    
-    def get_name(self):
-        return str(self.id) + " " + self.nom
 
-class PC(models.Model):
-    id = models.AutoField(
-            primary_key=True,
-            editable=False)
-    nom = models.CharField(
-        max_length= 6)
 
-    def __str__ (self):
-        return str(self.id) + " -> " + self.nom
-    
-    def get_name(self):
-        return str(self.id) + " " + self.nom
+class Infrastructure(models.Model):
 
-class Personne(models.Model):
-
-    TYPE = (
-        ('PC', ('PC - Run windows')),
-        ('Mac', ('Mac - Run MacOS')),
-        ('Serveur', ('Serveur - Simple Server to deploy virtual machines')),
-        ('Switch', ('Switch - To maintains and connect servers')),
-    )
-
-    id = models.AutoField(primary_key=True, editable=False)
+    num_i = models.AutoField(primary_key=True, editable=False)
     nom = models.CharField(max_length=12)
-    poste = models.CharField(max_length=12)
-    email = models.CharField(max_length=24)
+    nb_mach = models.CharField(max_length=12)
+    nb_equi = models.CharField(max_length=24)
+    respon = models.CharField(max_length=18)
+    entretien = models.DateField()
+
+
+
+class Equipement(models.Model):
+
+    TYPE = (
+        ('SWITCH', ('SWITCH')),
+        ('ROUTEUR', ('ROUTEUR')),
+        ('FIREWALL', ('FIREWALL')),
+    )
+
+    num_e = models.AutoField(primary_key=True, editable=False)
+    type = models.CharField(max_length=12, choices=TYPE, default='SWITCH')
+    infra = models.CharField(max_length=32)
+    uti = models.CharField(max_length=12)
+    last_maj = models.DateField()
